@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SalamComponent } from './components/salam/salam.component';
+import { SqrtPipe } from './pipes/app.sqrt';
+import { BukuComponent } from './components/buku/buku.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ToolbarComponent,
     FooterComponent,
-    SalamComponent
+    SalamComponent,
+    SqrtPipe,
+    BukuComponent
   ],
   imports: [
     BrowserModule,
