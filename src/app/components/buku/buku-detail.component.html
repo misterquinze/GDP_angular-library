@@ -1,0 +1,33 @@
+<!-- <div class="container" *ngIf=buku>
+  <h2>{{buku.judul}} Details</h2>
+  <fieldset>
+    <div class="form-group"><span>id: {{buku.id}}</span></div>
+    <div class="form-group"><span>ISBN: {{buku.isbn}}</span></div>
+    <div class="form-group"><span>Pengarang: {{buku.pengarang}}</span></div>
+    <div class="form-group"><span>Penerbit: {{buku.penerbit}}</span></div>
+    <div class="form-group"><span>Tanggal Terbit: {{buku.tglterbit | date: 'dd-MM-yyyy'}}</span></div>
+  </fieldset>
+</div> -->
+<!-- <h2>Buku Details Works</h2> -->
+<div class="container" *ngIf=buku>
+  <h2>{{buku.judul | uppercase}} Details</h2>
+  <fieldset>
+    <div class="form-group"><span>id: {{buku.id}}</span></div>
+    <div class="form-group"><span>ISBN: {{buku.isbn}}</span></div>
+    <div class="form-group">
+      <label>Pengarang: </label>
+      <input id="txtPengarang" class="form-control" [(ngModel)]="buku.pengarang" placeholder="Nama Pengarang">
+    </div>
+    <div class="form-group">
+      <label>Penerbit: </label>
+      <input type="text" id="txtPenerbit" class="form-control" [(ngModel)]="buku.penerbit" placeholder="Nama Penerbit">
+
+    </div>
+    <div class="form-group">
+      <label>Tanggal Terbit: </label>
+      <input type="date" id="txtTglterbit" class="form-control" [(ngModel)]="buku.tglterbit">
+      <span>Tanggal Terbit: {{buku.tglterbit | date: 'dd-MM-yyyy'}}</span>
+    </div>
+    <div class="btn mx-1 btn-success" type="submit" (click)="update()">Update</div>
+  </fieldset>
+</div>

@@ -3,9 +3,12 @@ footer {
   display: flex;
   align-items: center;
   line-height: 20px;
+  background: #2c35e350;
+  position: absolute;
+  bottom: 0;
 }
 
-footer a {
+footer p {
   display: flex;
   align-items: center;
 }

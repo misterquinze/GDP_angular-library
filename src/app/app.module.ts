@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -10,6 +12,7 @@ import { SqrtPipe } from './pipes/app.sqrt';
 import { BukuComponent } from './components/buku/buku.component';
 import { PelangganComponent } from './components/pelanggan/pelanggan.component';
 import { SewaComponent } from './components/sewa/sewa.component';
+import { BukuDetailComponent } from './components/buku/buku-detail.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +23,14 @@ import { SewaComponent } from './components/sewa/sewa.component';
     SqrtPipe,
     BukuComponent,
     PelangganComponent,
-    SewaComponent
+    SewaComponent,
+    BukuDetailComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
