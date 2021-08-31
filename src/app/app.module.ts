@@ -14,6 +14,7 @@ import { PelangganComponent } from './components/pelanggan/pelanggan.component';
 import { SewaComponent } from './components/sewa/sewa.component';
 import { BukuDetailComponent } from './components/buku/buku-detail.component';
 import { PelangganDetailComponent } from './components/pelanggan/pelanggan-detail.component';
+import { SewaDetailComponent } from './components/sewa/sewa-detail.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { PelangganDetailComponent } from './components/pelanggan/pelanggan-detai
     PelangganComponent,
     SewaComponent,
     BukuDetailComponent,
-    PelangganDetailComponent
+    PelangganDetailComponent,
+    SewaDetailComponent
   ],
   imports: [
     BrowserModule,
