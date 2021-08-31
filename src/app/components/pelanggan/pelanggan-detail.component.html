@@ -1,4 +1,4 @@
-<p>pelanggan-detail works!</p>
+<!-- <p>pelanggan-detail works!</p> -->
 <!-- <div class="container" *ngIf=pelanggan>
   <h2>{{pelanggan.nama}} Details</h2>
   <fieldset>
@@ -9,7 +9,7 @@
     <div class="form-group"><span>Jenis Kelamint: {{pelanggan.telp}}</span></div>
   </fieldset>
 </div> -->
-<!-- <h2>Pelanggan Details Works</h2> -->
+
 <div class="container" *ngIf=pelanggan>
   <h2>{{pelanggan.nama | uppercase}} Details</h2>
   <fieldset>
@@ -27,8 +27,13 @@
     <div class="form-group">
       <label>Telepon: </label>
       <input type="date" id="txtTelp" class="form-control" [(ngModel)]="pelanggan.telp">
-   \
     </div>
-    <div class="btn mx-1 btn-success" type="submit" (click)="update()">Update</div>
+    <div class="d-flex justify-content-between" style="margin-top: 10px;">
+      <span><button class="btn btn-secondary fw-bold" (click)="goBack()">&lt;</button></span>
+      <div>
+        <button class="btn mx-1 btn-success" type="submit" (click)="update()">Update</button>
+        <button class="btn mx-1 btn-danger">Delete</button>
+      </div>
+    </div>
   </fieldset>
 </div>

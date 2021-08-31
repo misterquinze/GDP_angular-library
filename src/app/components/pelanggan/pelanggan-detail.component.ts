@@ -13,6 +13,10 @@ export class PelangganDetailComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  goBack(): void{
+    this.pelanggan = undefined;
+  }
+
   update(): void {
     if(this.pelanggan){
       this.pelangganService.updatePelanggan(this.pelanggan).subscribe();

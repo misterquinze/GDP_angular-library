@@ -26,8 +26,15 @@
     <div class="form-group">
       <label>Tanggal Terbit: </label>
       <input type="date" id="txtTglterbit" class="form-control" [(ngModel)]="buku.tglterbit">
-      <span>Tanggal Terbit: {{buku.tglterbit | date: 'dd-MM-yyyy'}}</span>
+
     </div>
-    <div class="btn mx-1 btn-success" type="submit" (click)="update()">Update</div>
+    <div class="d-flex justify-content-between" style="margin-top: 10px;">
+      <span><button class="btn btn-secondary fw-bold" (click)="goBack()">&lt;</button></span>
+      <div>
+        <button class="btn mx-1 btn-success" type="submit" (click)="update()">Update</button>
+        <button class="btn mx-1 btn-danger">Delete</button>
+      </div>
+    </div>
+
   </fieldset>
 </div>

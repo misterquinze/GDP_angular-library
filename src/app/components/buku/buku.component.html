@@ -9,34 +9,27 @@
   </ul>
 
 </div> -->
-<div >
-  <div>
+
+
+<div class="container mt-3 ">
+  <div class="container mb-3">
     <button class="btn btn-danger" (click)="getAllBuku()">Load Buku</button>
   </div>
-  <table class="table table-hover table-bordered" style="width: 50%">
-    <thead>
-      <tr >
-        <th scope="col">id</th>
-        <!-- <th scope="col">Judul</th>
-        <th scope="col">Pengarang</th>
-        <th scope="col">Penerbit</th> -->
-        <th scope="col">ISBN</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor ="let iBuku of buku">
-        <th scope="row">{{iBuku.id}}</th>
-        <!-- <td>{{iBuku.judul}}</td>
-        <td>{{iBuku.pengarang}}</td>
-        <td>{{iBuku.penerbit}}</td> -->
-        <td (click)="onSelectedBuku(iBuku)">{{iBuku.isbn}}</td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="d-flex justify-content-between">
+    <div>
+      <div class="card border-primary mb-3" style="width: 500px;" *ngFor="let iBuku of buku">
+        <div class="card-body" (click)="onSelectedBuku(iBuku)">
+            <div>Judul: {{iBuku.judul}}</div>
+            <div>ISBN: {{iBuku.isbn}}</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <app-buku-detail [buku]="selectedBuku"></app-buku-detail>
+    </div>
+  </div>
 </div>
-<div>
-  <app-buku-detail [buku]="selectedBuku"></app-buku-detail>
-</div>
+
 <ng-template #bukuKosong>
-  <p>Data Buku Tidak Ada</p>
+  <p>Data Buku tidak ada!</p>
 </ng-template>

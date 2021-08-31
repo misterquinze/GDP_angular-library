@@ -1,14 +1,11 @@
 footer {
   margin-top: 8px;
-  display: flex;
-  align-items: center;
-  line-height: 20px;
-  background: #2c35e350;
-  position: absolute;
-  bottom: 0;
+  padding: 20px;
+  text-align: center;
+  background: #2c3e50;
+  color: white;
+  /* position: absolute;
+  bottom: 0; */
 }
 
-footer p {
-  display: flex;
-  align-items: center;
-}
+
