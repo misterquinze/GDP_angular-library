@@ -1,7 +1,7 @@
 export interface Buku {
   id:         number;
   pengarang:  string;
-  judul:      String;
+  judul:      string;
   tglterbit:  string;
   penerbit:   string;
   isbn:       string;
