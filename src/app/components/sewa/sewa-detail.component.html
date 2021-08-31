@@ -1,1 +1,12 @@
-<p>sewa-detail works!</p>
+<!-- <p>sewa-detail works!</p> -->
+<div class="container" *ngIf=sewa>
+  <h2>{{sewa.isbn}}</h2>
+  <fieldset>
+    <div class="form-group"><span>id: {{sewa.id}}</span></div>
+    <div class="form-group"><span>ISBN Buku: {{sewa.isbn}}</span></div>
+    <div class="form-group"><span>ID Pelanggan: {{sewa.pelangganid}}</span></div>
+    <div class="form-group"><span>Tanggal Sewa: {{sewa.tglsewa}}</span></div>
+    <div class="form-group"><span>Lama Sewa: {{sewa.lamasewa}}</span></div>
+    <div class="form-group"><span>Keterangan: {{sewa.keterangan}}</span></div>
+  </fieldset>
+</div>

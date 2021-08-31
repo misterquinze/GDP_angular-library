@@ -20,7 +20,7 @@ export class PelangganComponent implements OnInit {
     this.pelangganService.getAllPelanggan().subscribe(result => {
       this.pelanggan = result
       console.log("pelanggan", this.pelanggan);
-    })
+    });
   }
 
   onSelectedPelanggan(pelanggan: Pelanggan) {

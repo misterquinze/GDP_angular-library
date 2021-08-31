@@ -21,7 +21,7 @@ export class PelangganService {
 
   getAllPelanggan(): Observable<Pelanggan[]> {
     const dataPelanggan = this.httpClient.get<Pelanggan[]>(this.url).pipe(
-        tap((result) => console.log('PelangganService.getAllPelanggan(): Pealnggan berhasil diload'))
+        tap((result) => console.log('PelangganService.getAllPelanggan(): Pelanggan berhasil diload'))
       );
 
     return dataPelanggan;
