@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { catchError, tap } from 'rxjs/operators';
 
 import{ bukuSample } from 'src/app/buku-sample'
 import { Buku } from 'src/app/model/Buku';
+import { MessageService } from '../message/message.service';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,8 @@ export class BukuService {
   }
 
   constructor(
-    private httpClient: HttpClient
+    private httpClient: HttpClient,
+    private msgSvc: MessageService
    ) { }
 
   // test():String {
@@ -33,7 +35,8 @@ export class BukuService {
 
   getAllBuku(): Observable<Buku[]> {
     const dataBuku = this.httpClient.get<Buku[]>(this.url).pipe(
-        tap((result) => console.log('BukuService.getAllBuku(): Buku berhasil diload'))
+        tap((result) => this.msgSvc.add('BukuService.getAllBuku(): Buku berhasil diload')),
+        catchError(this.msgSvc.handleError<Buku[]>('getAllBuku failed', []))
       );
 
     return dataBuku;
@@ -43,7 +46,12 @@ export class BukuService {
     const url = this.url + buku.id;
 
     return this.httpClient.put(url, buku, this.httpOptions).pipe(
-      tap((result) => console.log('BukuService.updateBuku(): Buku berhasil di update')));
+      tap((result) => this.msgSvc.add('BukuService.updateBuku(): Buku berhasil di update')));
+  }
+
+  addBuku(buku: Buku): Observable<any>{
+    return this.httpClient.post(this.url, buku, this.httpOptions).pipe(
+      tap((result) => this.msgSvc.add('BukuService.addBuku(): Buku baru berhasil ditambahkan')))
   }
 }
 

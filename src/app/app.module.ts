@@ -15,6 +15,8 @@ import { SewaComponent } from './components/sewa/sewa.component';
 import { BukuDetailComponent } from './components/buku/buku-detail.component';
 import { PelangganDetailComponent } from './components/pelanggan/pelanggan-detail.component';
 import { SewaDetailComponent } from './components/sewa/sewa-detail.component';
+import { BukuNewFormComponent } from './components/buku/buku-new-form/buku-new-form.component';
+import { MessagesComponent } from './components/messages/messages.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { SewaDetailComponent } from './components/sewa/sewa-detail.component';
     SewaComponent,
     BukuDetailComponent,
     PelangganDetailComponent,
-    SewaDetailComponent
+    SewaDetailComponent,
+    BukuNewFormComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,

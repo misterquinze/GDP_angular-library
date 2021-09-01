@@ -1,4 +1,4 @@
-<!-- <div class="container" *ngIf=buku>
+<!-- <div class="container" *ngIf=buku; else bukuKosong>
   <h2>{{buku.judul}} Details</h2>
   <fieldset>
     <div class="form-group"><span>id: {{buku.id}}</span></div>
@@ -7,6 +7,9 @@
     <div class="form-group"><span>Penerbit: {{buku.penerbit}}</span></div>
     <div class="form-group"><span>Tanggal Terbit: {{buku.tglterbit | date: 'dd-MM-yyyy'}}</span></div>
   </fieldset>
+  <ng-template #bukuKosong>
+  <p>Data Buku tidak ada!</p>
+</ng-template>
 </div> -->
 <!-- <h2>Buku Details Works</h2> -->
 <div class="container" *ngIf=buku>

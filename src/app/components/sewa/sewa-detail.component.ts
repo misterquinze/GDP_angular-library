@@ -14,4 +14,13 @@ export class SewaDetailComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  goBack(): void{
+    this.sewa = undefined;
+  }
+
+  update(): void{
+    if(this.sewa) {
+      this.sewaService.updateSewa(this.sewa).subscribe();
+    }
+  }
 }

@@ -1,4 +1,5 @@
 <!-- <p>sewa-detail works!</p> -->
+<!-- SHOW ALL SEWA -->
 <div class="container" *ngIf=sewa>
   <h2>Detail Sewa Pelanggan: {{sewa.pelangganid}}</h2>
   <fieldset>
@@ -10,3 +11,32 @@
     <div class="form-group"><span>Keterangan: {{sewa.keterangan}}</span></div>
   </fieldset>
 </div>
+
+<!-- UPDATE -->
+<!-- <div class="container" *ngIf=sewa>
+  <h2>Detail Sewa Pelanggan: {{sewa.pelangganid}}</h2>
+  <fieldset>
+    <div class="form-group"><span>id: {{sewa.id}}</span></div>
+    <div class="form-group"><span>ISBN Buku: {{sewa.isbn}}</span></div>
+    <div class="form-group"><span>ID Pelanggan: {{sewa.pelangganid}}</span></div>
+    <div class="form-group">
+      <label>Tanggal Sewa: </label>
+      <input type="date" id="txtTglsewa" class="form-control" [(ngModel)]="sewa.tglsewa">
+    </div>
+    <div class="form-group">
+      <label>Lama Sewa: </label>
+      <input type="number" id="txtLamasewa" class="form-control" [(ngModel)]="sewa.lamasewa">
+    </div>
+    <div class="form-group">
+      <label>Keterangan: </label>
+      <input type="text" id="txtKeterangan" class="form-control" [(ngModel)]="sewa.keterangan" placeholder="Keterangan Sewa">
+    </div>
+    <div class="d-flex justify-content-between" style="margin-top: 10px;">
+      <span><button class="btn btn-secondary fw-bold" (click)="goBack()">&lt;</button></span>
+      <div>
+        <button class="btn mx-1 btn-success" type="submit" (click)="update()">Update</button>
+        <button class="btn mx-1 btn-danger">Delete</button>
+      </div>
+    </div>
+  </fieldset>
+</div> -->

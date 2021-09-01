@@ -1,0 +1,34 @@
+<!-- <p>buku-new-form works!</p> -->
+<div class="container">
+  <h2 style="text-align: center;">Form Add New Buku</h2>
+  <form #formBuku="ngForm" (ngSubmit)="save(formBuku.value)">
+    <div class="form-group row">
+      <label class="form-label mt-1">Pengarang: </label>
+      <input id="txtPengarang" class="form-control" name="pengarang" placeholder="Nama Pengarang" ngModel>
+    </div>
+    <div class="form-group row">
+      <label class="form-label mt-1">Judul: </label>
+      <input id="txtJudul" class="form-control" name="judul" placeholder="Judul Buku" ngModel>
+    </div>
+
+    <div class="form-group row">
+      <label class="form-label mt-1">Tanggal Terbit: </label>
+      <input type="date" id="txtTglterbit" class="form-control" name="tglterbit" ngModel>
+    </div>
+    <div class="form-group row">
+      <label class="form-label mt-1">Penerbit: </label>
+      <input type="text" id="txtPenerbit" class="form-control" name="penerbit" placeholder="Nama Penerbit" ngModel>
+    </div>
+    <div class="form-group row">
+      <label class="form-label mt-1">ISBN: </label>
+      <input id="txtISBN" class="form-control" name="buku.isbn" placeholder="Nomor ISBN" ngModel>
+    </div>
+    <div class="form-group row">
+      <label class="form-label mt-1">User ID: </label>
+      <input type="text" id="txtUserid" class="form-control" name="userid" ngModel>
+    </div>
+    <div class="d-flex justify-content-between" style="margin-top: 10px;">
+      <button class="btn mx-1 btn-success" type="submit">Save</button>
+    </div>
+  </form>
+</div>

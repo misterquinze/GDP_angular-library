@@ -27,4 +27,10 @@ export class SewaService {
     return dataSewa;
   }
 
+  updateSewa(sewa: Sewa): Observable<any>{
+    const url = this.url + sewa.id;
+
+    return this.httpClient.put(url, sewa, this.httpOptions).pipe(tap((result) => console.log('SewaService.updateSewa():Sewa berhasil di update')));
+  }
+
 }
