@@ -9,7 +9,7 @@ import { Sewa } from 'src/app/model/Sewa';
   providedIn: 'root'
 })
 export class SewaService {
-  url = 'http://localhost:8888/sewadetail/';
+  url = 'http://localhost:8888/sewa/';
 
   private httpOptions = {
     headers: new HttpHeaders({'Content-Type': 'aplication/json'})
