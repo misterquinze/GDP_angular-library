@@ -4,11 +4,11 @@
   <form #formBuku="ngForm" (ngSubmit)="save(formBuku.value)">
     <div class="form-group row">
       <label class="form-label mt-1">Pengarang: </label>
-      <input id="txtPengarang" class="form-control" name="pengarang" placeholder="Nama Pengarang" ngModel>
+      <input type="text" id="txtPengarang" class="form-control" name="pengarang" placeholder="Nama Pengarang" ngModel>
     </div>
     <div class="form-group row">
       <label class="form-label mt-1">Judul: </label>
-      <input id="txtJudul" class="form-control" name="judul" placeholder="Judul Buku" ngModel>
+      <input type="text" id="txtJudul" class="form-control" name="judul" placeholder="Judul Buku" ngModel>
     </div>
 
     <div class="form-group row">
@@ -21,7 +21,7 @@
     </div>
     <div class="form-group row">
       <label class="form-label mt-1">ISBN: </label>
-      <input id="txtISBN" class="form-control" name="buku.isbn" placeholder="Nomor ISBN" ngModel>
+      <input type="text" id="txtISBN" class="form-control" name="isbn" placeholder="Nomor ISBN" ngModel>
     </div>
     <div class="form-group row">
       <label class="form-label mt-1">User ID: </label>

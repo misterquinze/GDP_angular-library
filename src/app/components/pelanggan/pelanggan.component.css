@@ -12,3 +12,11 @@ svg#rocket-smoke {
   right: 180px;
   z-index: -10;
 }
+
+.btn{
+  margin-right: 10px;
+}
+
+#addNewBtn {
+  color: white;
+}

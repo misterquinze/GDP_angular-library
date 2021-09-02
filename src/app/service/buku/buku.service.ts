@@ -15,7 +15,7 @@ export class BukuService {
   url = 'http://localhost:8888/buku/';
 
   private httpOptions = {
-    headers: new HttpHeaders({'Content-Type': 'aplication/json'})
+    headers: new HttpHeaders({'Content-Type':'application/json'})
   }
 
   constructor(
@@ -46,12 +46,17 @@ export class BukuService {
     const url = this.url + buku.id;
 
     return this.httpClient.put(url, buku, this.httpOptions).pipe(
-      tap((result) => this.msgSvc.add('BukuService.updateBuku(): Buku berhasil di update')));
+      tap((result) => this.msgSvc.add('BukuService.updateBuku(): Buku berhasil di update')),
+      catchError(this.msgSvc.handleError<Buku[]>('updateBuku failed', [])));
   }
 
   addBuku(buku: Buku): Observable<any>{
-    return this.httpClient.post(this.url, buku, this.httpOptions).pipe(
-      tap((result) => this.msgSvc.add('BukuService.addBuku(): Buku baru berhasil ditambahkan')))
+    const svcUrl = this.url;
+    return this.httpClient.post(svcUrl, buku, this.httpOptions).pipe(
+      tap((result) => this.msgSvc.add('BukuService.addBuku(): Buku baru berhasil ditambahkan')),
+      catchError(this.msgSvc.handleError<Buku[]>('addBuku failed', []))
+    );
+
   }
 }
 

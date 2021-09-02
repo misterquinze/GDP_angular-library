@@ -17,6 +17,7 @@ import { PelangganDetailComponent } from './components/pelanggan/pelanggan-detai
 import { SewaDetailComponent } from './components/sewa/sewa-detail.component';
 import { BukuNewFormComponent } from './components/buku/buku-new-form/buku-new-form.component';
 import { MessagesComponent } from './components/messages/messages.component';
+import { PelangganNewFormComponent } from './components/pelanggan/pelanggan-new-form/pelanggan-new-form.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { MessagesComponent } from './components/messages/messages.component';
     PelangganDetailComponent,
     SewaDetailComponent,
     BukuNewFormComponent,
-    MessagesComponent
+    MessagesComponent,
+    PelangganNewFormComponent
   ],
   imports: [
     BrowserModule,

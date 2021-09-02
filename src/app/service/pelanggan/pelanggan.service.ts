@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
 import { Pelanggan } from 'src/app/model/Pelanggan';
+import { MessageService } from '../message/message.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,11 +13,12 @@ export class PelangganService {
   url = 'http://localhost:8888/pelanggan/';
 
   private httpOptions = {
-    headers: new HttpHeaders({'Content-Type': 'aplication/json'})
+    headers: new HttpHeaders({'Content-Type': 'application/json'})
   }
 
   constructor(
-    private httpClient: HttpClient
+    private httpClient: HttpClient,
+    private msgSvc: MessageService
   ) { }
 
   getAllPelanggan(): Observable<Pelanggan[]> {
@@ -32,5 +34,10 @@ export class PelangganService {
 
     return this.httpClient.put(url, pelanggan, this.httpOptions).pipe(
       tap((result) => console.log('PelangganService.updatePelanggan(): Pelanggan berhasil di update')));
+  }
+
+  addPelanggan(pelanggan: Pelanggan): Observable<any>{
+    return this.httpClient.post(this.url, pelanggan, this.httpOptions).pipe(
+      tap((result) => this.msgSvc.add('PelangganService.addPelanggan(): Pelanggan baru berhasil ditambahkan')))
   }
 }
