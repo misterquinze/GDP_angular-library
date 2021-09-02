@@ -1,9 +1,10 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { catchError, tap } from 'rxjs/operators';
 
 import { Sewa } from 'src/app/model/Sewa';
+import { MessageService } from '../message/message.service';
 
 @Injectable({
   providedIn: 'root'
@@ -16,12 +17,14 @@ export class SewaService {
   }
 
   constructor(
-    private httpClient: HttpClient
+    private httpClient: HttpClient,
+    private msgSvc: MessageService
   ) { }
 
   getAllSewa(): Observable<Sewa[]> {
     const dataSewa = this.httpClient.get<Sewa[]>(this.url).pipe(
-        tap((result) => console.log('SewaService.getAllSewa(): Sewa berhasil diload'))
+      tap((result) => this.msgSvc.add('SewaService.getAllSewa(): Sewa berhasil diload')),
+      catchError(this.msgSvc.handleError<Sewa[]>('getAllSewa failed', []))
       );
 
     return dataSewa;
@@ -30,7 +33,10 @@ export class SewaService {
   updateSewa(sewa: Sewa): Observable<any>{
     const url = this.url + sewa.id;
 
-    return this.httpClient.put(url, sewa, this.httpOptions).pipe(tap((result) => console.log('SewaService.updateSewa():Sewa berhasil di update')));
+    return this.httpClient.put(url, sewa, this.httpOptions).pipe(
+      tap((result) => this.msgSvc.add('SewaService.updateSewa(): Sewa berhasil diupdate')),
+      catchError(this.msgSvc.handleError<Sewa[]>('updateSewa failed', []))
+      );
   }
 
 }

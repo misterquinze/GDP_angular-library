@@ -1,6 +1,7 @@
 import { Component, KeyValueDiffers, OnInit } from '@angular/core';
 import { BukuService } from 'src/app/service/buku/buku.service';
 import { Buku } from 'src/app/model/Buku';
+import { MessageService } from 'src/app/service/message/message.service';
 
 @Component({
   selector: 'app-buku',
@@ -12,7 +13,7 @@ export class BukuComponent implements OnInit {
   jmlBuku = 0;
   selectedBuku?: Buku;
 
-  constructor(private bukuService: BukuService) { }
+  constructor(private bukuService: BukuService, private msgSvc: MessageService) { }
 
   ngOnInit(): void {
     // alert(this.bukuService.test());
@@ -34,4 +35,10 @@ export class BukuComponent implements OnInit {
   onSelectedBuku(buku: Buku){
     this.selectedBuku = buku;
   }
+
+  delete(bukuId: any): void {
+    this.msgSvc.add("Deleting Buku with id=" + bukuId);
+    this.bukuService.deleteBuku(bukuId).subscribe();
+  }
+
 }
