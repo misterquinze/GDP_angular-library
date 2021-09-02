@@ -54,4 +54,13 @@ export class PelangganService {
       catchError(this.msgSvc.handleError<Pelanggan[]>('deletePelanggan failed', []))
     );
   }
+
+  // sayHello(name: String){
+  //   alert('Welcome'  + name);
+
+  // }
+
+  // alertMsg(msg: String){
+  //   alert(msg);
+  // }
 }
