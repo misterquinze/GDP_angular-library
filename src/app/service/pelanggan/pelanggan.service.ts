@@ -45,4 +45,13 @@ export class PelangganService {
       catchError(this.msgSvc.handleError<Pelanggan[]>('addPelanggan failed', []))
     );
   }
+
+  deletePelanggan(pelangganId: any): Observable<any> {
+    const svcUrl = this.url + pelangganId;
+
+    return this.httpClient.delete(svcUrl).pipe(
+      tap((result) => this.msgSvc.add('PelangganService.deletePelanggan(): Pelanggan berhasil diahapus dari WebService!')),
+      catchError(this.msgSvc.handleError<Pelanggan[]>('deletePelanggan failed', []))
+    );
+  }
 }

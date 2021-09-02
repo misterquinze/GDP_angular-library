@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { PelangganService } from 'src/app/service/pelanggan/pelanggan.service';
 import { Pelanggan } from 'src/app/model/Pelanggan';
+import { MessageService } from 'src/app/service/message/message.service';
 @Component({
   selector: 'app-pelanggan',
   templateUrl: './pelanggan.component.html',
@@ -11,7 +12,9 @@ export class PelangganComponent implements OnInit {
   pelanggan: Pelanggan[] = [];
   jmlpelanggan = 0;
   selectedpelanggan?: Pelanggan;
-  constructor(private pelangganService: PelangganService) { }
+
+  constructor(
+    private pelangganService: PelangganService, private msgSvc: MessageService) { }
 
   ngOnInit(): void {
   }
@@ -27,4 +30,8 @@ export class PelangganComponent implements OnInit {
     this.selectedpelanggan = pelanggan;
   }
 
+  delete(pelangganId: any): void {
+    this.msgSvc.add("Deleting pelanggan with id=" + pelangganId);
+    this.pelangganService.deletePelanggan(pelangganId).subscribe();
+  }
 }

@@ -6,11 +6,11 @@
   <div class="d-flex justify-content-between">
     <div>
       <div class="card border-primary mb-3" style="width: 500px;" *ngFor="let iPelanggan of pelanggan">
-
         <div class="card-body" (click)="onSelectedPelanggan(iPelanggan)">
             <div>Nama Pelanggan: {{iPelanggan.nama}}</div>
             <div>Kode Pelanggan: {{iPelanggan.kodepel}}</div>
         </div>
+        <button class="btn btn-danger" (click)="delete(iPelanggan.id)">Delete</button>
       </div>
     </div>
     <div>
