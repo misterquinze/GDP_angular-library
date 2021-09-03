@@ -14,31 +14,32 @@
 <ng-template #pelangganKosong>
   <p>Data Pelanggan tidak ada!</p>
 </ng-template> -->
-
-<div class="container" *ngIf=pelanggan>
-  <h2>{{pelanggan.nama | uppercase}} Details</h2>
-  <fieldset>
-    <div class="form-group"><span>id: {{pelanggan.id}}</span></div>
-    <div class="form-group"><span>Kode Pelanggan: {{pelanggan.kodepel}}</span></div>
-    <div class="form-group">
-      <label>Nama: </label>
-      <input id="txtNama" class="form-control" [(ngModel)]="pelanggan.nama" placeholder="Nama Pelanggan">
-    </div>
-    <div class="form-group">
-      <label>Alamat: </label>
-      <input type="text" id="txtAlamat" class="form-control" [(ngModel)]="pelanggan.alamat" placeholder="Alamat Pelanggan">
-
-    </div>
-    <div class="form-group">
-      <label>Telepon: </label>
-      <input type="tel" id="txtTelp" class="form-control" [(ngModel)]="pelanggan.telp">
-    </div>
-    <div class="d-flex justify-content-between" style="margin-top: 10px;">
-      <span><button class="btn btn-secondary fw-bold" (click)="goBack()">&lt;</button></span>
-      <div>
-        <button class="btn mx-1 btn-success" type="submit" (click)="update()">Update</button>
-        <button class="btn mx-1 btn-danger" (click)="delete(pelanggan.id)">Delete</button>
+<div class="card border-primary mb-3" *ngIf="pelanggan" style="width: 500px; height: 350px;">
+  <div class="card-body">
+    <h4 class="card-title">{{pelanggan.nama | uppercase}} Details</h4>
+    <fieldset>
+      <div class="form-group"><span>id: {{pelanggan.id}}</span></div>
+      <div class="form-group"><span>Kode Pelanggan: {{pelanggan.kodepel}}</span></div>
+      <div class="form-group">
+        <label>Nama: </label>
+        <input id="txtNama" class="form-control" [(ngModel)]="pelanggan.nama" placeholder="Nama Pelanggan">
       </div>
-    </div>
-  </fieldset>
+      <div class="form-group">
+        <label>Alamat: </label>
+        <input type="text" id="txtAlamat" class="form-control" [(ngModel)]="pelanggan.alamat" placeholder="Alamat Pelanggan">
+
+      </div>
+      <div class="form-group">
+        <label>Telepon: </label>
+        <input type="tel" id="txtTelp" class="form-control" [(ngModel)]="pelanggan.telp">
+      </div>
+      <div class="d-flex justify-content-between" style="margin-top: 10px;">
+        <span><button class="btn btn-secondary fw-bold" (click)="goBack()">&lt;</button></span>
+        <div>
+          <button class="btn mx-1 btn-success" type="submit" (click)="update()">Update</button>
+          <button class="btn mx-1 btn-danger" (click)="delete(pelanggan.id)">Delete</button>
+        </div>
+      </div>
+    </fieldset>
+  </div>
 </div>

@@ -30,6 +30,17 @@ export class PelangganService {
     return dataPelanggan;
   }
 
+  getPelangganById(pelanggan: Pelanggan): Observable<Pelanggan> {
+    const urlWithId = this.url + pelanggan.id;
+
+    const pelangganById = this.httpClient.get<Pelanggan>(urlWithId).pipe(
+      tap((result) =>this.msgSvc.add('PelangganService.getPelangganById(): Pelanggan berhasil diload')),
+      catchError(this.msgSvc.handleError<Pelanggan>('getPelangganById failed'))
+    );
+
+    return pelangganById;
+  }
+
   updatePelanggan(pelanggan: Pelanggan): Observable<any> {
     const url = this.url + pelanggan.id;
 

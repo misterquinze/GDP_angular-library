@@ -3,7 +3,7 @@ export interface Sewa {
   isbn:        string;
   pelangganid: string;
   tglsewa:     string;
-  lamasewa:    string;
+  lamasewa:    number;
   keterangan:  string;
 
 }
