@@ -6,6 +6,7 @@ import { PelangganNewFormComponent } from './components/pelanggan/pelanggan-new-
 import { PelangganComponent } from './components/pelanggan/pelanggan.component';
 
 import { SalamComponent } from "./components/salam/salam.component"
+import { SewaNewFormComponent } from './components/sewa/sewa-new-form/sewa-new-form.component';
 import { SewaComponent } from './components/sewa/sewa.component';
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path:"buku", component:BukuComponent},
   {path:"pelanggan", component:PelangganComponent},
   {path:"sewa", component:SewaComponent},
+  {path:"sew-new-form", component:SewaNewFormComponent},
   {path:"buku-new-form", component:BukuNewFormComponent},
   {path:"pelanggan-new-form", component:PelangganNewFormComponent}
 ];

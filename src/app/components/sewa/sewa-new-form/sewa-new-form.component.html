@@ -1,1 +1,30 @@
-<p>sewa-new-form works!</p>
+<div class="container">
+  <h2 style="text-align: center;">Form Add New Sewa</h2>
+  <form #formBuku="ngForm"
+ >
+    <div class="form-group row">
+      <label class="form-label mt-1">ISBN: </label>
+      <input type="text" id="txtISBN" class="form-control" name="pengarang" placeholder="Nama Pengarang" ngModel>
+    </div>
+    <div class="form-group row">
+      <label class="form-label mt-1">Pelanggan ID: </label>
+      <input type="text" id="txtPelangganId" class="form-control" name="judul" placeholder="Judul Buku" ngModel>
+    </div>
+
+    <div class="form-group row">
+      <label class="form-label mt-1">Tanggal Sewa: </label>
+      <input type="date" id="txtTglsewa" class="form-control" name="tglterbit" ngModel>
+    </div>
+    <div class="form-group row">
+      <label class="form-label mt-1">Lama Sewa: </label>
+      <input type="text" id="txtLamaSewa" class="form-control" name="penerbit" placeholder="Nama Penerbit" ngModel>
+    </div>
+    <div class="form-group row">
+      <label class="form-label mt-1">ISBN: </label>
+      <input type="text" id="txtISBN" class="form-control" name="isbn" placeholder="Nomor ISBN" ngModel>
+    </div>
+    <div class="d-flex justify-content-between" style="margin-top: 10px;">
+      <button class="btn mx-1 btn-success" type="submit">Save</button>
+    </div>
+  </form>
+</div>

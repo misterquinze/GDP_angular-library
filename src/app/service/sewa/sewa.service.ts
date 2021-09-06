@@ -39,4 +39,13 @@ export class SewaService {
       );
   }
 
+  addSewa(sewa: Sewa): Observable<any>{
+    const svcUrl = this.url;
+    return this.httpClient.post(svcUrl, sewa, this.httpOptions).pipe(
+      tap((result) => this.msgSvc.add('SewaService.addSewa(): Sewa baru berhasil ditambahkan')),
+      catchError(this.msgSvc.handleError<Sewa[]>('addSewa failed', []))
+    );
+
+  }
+
 }
