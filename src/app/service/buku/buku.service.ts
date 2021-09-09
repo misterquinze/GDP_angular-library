@@ -51,8 +51,7 @@ export class BukuService {
   }
 
   addBuku(buku: Buku): Observable<any>{
-    const svcUrl = this.url;
-    return this.httpClient.post(svcUrl, buku, this.httpOptions).pipe(
+    return this.httpClient.post(this.url, buku, this.httpOptions).pipe(
       tap((result) => this.msgSvc.add('BukuService.addBuku(): Buku baru berhasil ditambahkan')),
       catchError(this.msgSvc.handleError<Buku[]>('addBuku failed', []))
     );
@@ -65,6 +64,13 @@ export class BukuService {
     return this.httpClient.delete(svcUrl).pipe(
       tap((result) => this.msgSvc.add('BukuService.deleteBuku(): Buku berhasil diahapus dari WebService!')),
       catchError(this.msgSvc.handleError<Buku[]>('deleteBuku failed', []))
+    );
+  }
+
+  getBukuById(bukuId: string): Observable<Buku>  {
+    return this.httpClient.get<Buku>(this.url + bukuId).pipe(
+      tap((result) => this.msgSvc.add('BukuService.getBukuById(): Buku Id=' + bukuId + 'berhasil diload dari WebService!')),
+      catchError(this.msgSvc.handleError<Buku>('getBukuById failed'))
     );
   }
 

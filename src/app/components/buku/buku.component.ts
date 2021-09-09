@@ -33,6 +33,7 @@ export class BukuComponent implements OnInit {
   }
 
   onSelectedBuku(buku: Buku){
+    this.msgSvc.add("Berhasil ambil data buku details dengan ID = " + buku.id);
     this.selectedBuku = buku;
   }
 

@@ -1,4 +1,5 @@
-<div class="card border-primary mb-3" *ngIf="buku"; else bukuKosongstyle="width: 500px; height: 350px;" >
+<div class="card border-primary mb-3" *ngIf="buku" style="width: 500px; height: 300px;" >
+
   <div class="card-body">
     <h4 class="card-title">{{buku.judul | uppercase}} Details</h4>
     <fieldset>
@@ -10,7 +11,7 @@
       <div class="d-flex justify-content-between" style="margin-top: 10px;">
         <span><button class="btn btn-secondary fw-bold" (click)="goBack()">&lt;</button></span>
         <div>
-          <button class="btn mx-1 btn-success">Edit Data</button>
+          <a class="btn mx-1 btn-success" [routerLink]="['/buku-edit-form', buku.id]">Edit Data</a>
           <button class="btn mx-1 btn-danger">Delete Data</button>
         </div>
       </div>

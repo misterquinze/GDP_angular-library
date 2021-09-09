@@ -1,4 +1,4 @@
-<p>buku-edit-form works!</p>
+<!-- <p>buku-edit-form works!</p> -->
 <!-- <div class="card border-primary mb-3" *ngIf="buku" style="width: 500px; height: 350px;">
   <div class="card-body">
     <h4 class="card-title">{{buku.judul | uppercase}} Details</h4>
@@ -30,9 +30,9 @@
     </fieldset>
   </div>
 </div> -->
-<div class="container">
+<div class="container" *ngIf="buku">
   <h2 style="text-align: center;">Form Edit Buku</h2>
-  <fieldset >
+  <fieldset>
     <div class="form-group row">
       <label class="form-label mt-1">Pengarang: </label>
       <input type="text" id="txtPengarang" class="form-control" name="pengarang" placeholder="Nama Pengarang" [(ngModel)]="buku.pengarang">
@@ -41,15 +41,15 @@
       <label class="form-label mt-1">Judul: </label>
       <input type="text" id="txtJudul" class="form-control" name="judul" placeholder="Judul Buku" [(ngModel)]="buku.judul">
     </div>
-
-    <div class="form-group row">
-      <label class="form-label mt-1">Tanggal Terbit: </label>
-      <input type="date" id="txtTglterbit" class="form-control" name="tglterbit" [(ngModel)]="buku.tglterbit">
-    </div>
     <div class="form-group row">
       <label class="form-label mt-1">Penerbit: </label>
       <input type="text" id="txtPenerbit" class="form-control" name="penerbit" placeholder="Nama Penerbit" [(ngModel)]="buku.penerbit">
     </div>
+    <div class="form-group row">
+      <label class="form-label mt-1">Tanggal Terbit: </label>
+      <input type="date" id="txtTglterbit" class="form-control" name="tglterbit" [(ngModel)]="buku.tglterbit">
+    </div>
+
     <div class="form-group row">
       <label class="form-label mt-1">ISBN: </label>
       <input type="text" id="txtISBN" class="form-control" name="isbn" placeholder="Nomor ISBN" [(ngModel)]="buku.isbn">
