@@ -10,22 +10,20 @@ import { MessageService } from 'src/app/service/message/message.service';
 })
 export class BukuComponent implements OnInit {
   buku: Buku[] = [];
-  jmlBuku = 0;
+
   selectedBuku?: Buku;
 
   constructor(private bukuService: BukuService, private msgSvc: MessageService) { }
 
   ngOnInit(): void {
-
     // this.jmlBuku = this.buku.length;
-    //
-    // this.getAllBuku();
+    this.getAllBuku();
 
   }
   getAllBuku() {
     this.bukuService.getAllBuku().subscribe(result => {
       this.buku = result;
-      console.log("buku", this.jmlBuku);
+      this.msgSvc.add("Berhasil ambil seluruh data buku " );
     });
   }
 

@@ -11,9 +11,9 @@
 <!-- <ng-template #bukuKosong>
   <p>Data Buku tidak ada!</p>
   </ng-template> -->
-<div class="container mt-3 ">
+<div class="container mt-3 " *ngIf="buku">
   <div class="container mb-3">
-    <button class="btn btn-dark" (click)="getAllBuku()">Load Buku</button>
+    <!-- <button class="btn btn-dark" (click)="getAllBuku()">Load Buku</button> -->
 
     <a id="addNewBtn" class="btn btn-success" routerLink="/buku-new-form">Add New Buku</a>
   </div>

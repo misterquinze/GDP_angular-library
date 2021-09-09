@@ -11,7 +11,7 @@ import { MessageService } from '../message/message.service';
   providedIn: 'root'
 })
 export class BukuService {
-  buku: Buku[] = bukuSample;
+  // buku: Buku[] = bukuSample;
   url = 'http://localhost:8888/buku/';
 
   private httpOptions = {
@@ -27,19 +27,24 @@ export class BukuService {
   //   return 'test service';
   // }
 
-  testDataBuku(): Buku[] {
-    // console.log(this.buku);
-    return this.buku;
+  // testDataBuku(): Buku[] {
+  //   // console.log(this.buku);
+  //   return this.buku;
 
-  }
-
+  // }
   getAllBuku(): Observable<Buku[]> {
     const dataBuku = this.httpClient.get<Buku[]>(this.url).pipe(
         tap((result) => this.msgSvc.add('BukuService.getAllBuku(): Buku berhasil diload')),
         catchError(this.msgSvc.handleError<Buku[]>('getAllBuku failed', []))
       );
-
     return dataBuku;
+  }
+
+  addBuku(buku: Buku): Observable<any>{
+    return this.httpClient.post(this.url, buku, this.httpOptions).pipe(
+      tap((result) => this.msgSvc.add('BukuService.addBuku(): Buku baru berhasil ditambahkan')),
+      catchError(this.msgSvc.handleError<Buku[]>('addBuku failed', []))
+    );
   }
 
   updateBuku(buku: Buku): Observable<any> {
@@ -48,14 +53,6 @@ export class BukuService {
     return this.httpClient.put(url, buku, this.httpOptions).pipe(
       tap((result) => this.msgSvc.add('BukuService.updateBuku(): Buku berhasil di update')),
       catchError(this.msgSvc.handleError<Buku[]>('updateBuku failed', [])));
-  }
-
-  addBuku(buku: Buku): Observable<any>{
-    return this.httpClient.post(this.url, buku, this.httpOptions).pipe(
-      tap((result) => this.msgSvc.add('BukuService.addBuku(): Buku baru berhasil ditambahkan')),
-      catchError(this.msgSvc.handleError<Buku[]>('addBuku failed', []))
-    );
-
   }
 
   deleteBuku(bukuId: any): Observable<any> {

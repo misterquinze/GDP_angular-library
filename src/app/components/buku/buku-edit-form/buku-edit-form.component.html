@@ -1,35 +1,3 @@
-<!-- <p>buku-edit-form works!</p> -->
-<!-- <div class="card border-primary mb-3" *ngIf="buku" style="width: 500px; height: 350px;">
-  <div class="card-body">
-    <h4 class="card-title">{{buku.judul | uppercase}} Details</h4>
-    <fieldset>
-      <div class="form-group"><span>id: {{buku.id}}</span></div>
-      <div class="form-group"><span>ISBN: {{buku.isbn}}</span></div>
-      <div class="form-group">
-        <label>Pengarang: </label>
-        <input id="txtPengarang" class="form-control" [(ngModel)]="buku.pengarang" placeholder="Nama Pengarang">
-      </div>
-      <div class="form-group">
-        <label>Penerbit: </label>
-        <input type="text" id="txtPenerbit" class="form-control" [(ngModel)]="buku.penerbit" placeholder="Nama Penerbit">
-
-      </div>
-      <div class="form-group">
-        <label>Tanggal Terbit: </label>
-        <input type="date" id="txtTglterbit" class="form-control" [(ngModel)]="buku.tglterbit">
-
-      </div>
-      <div class="d-flex justify-content-between" style="margin-top: 10px;">
-        <span><button class="btn btn-secondary fw-bold" (click)="goBack()">&lt;</button></span>
-        <div>
-          <button class="btn mx-1 btn-success" type="submit" (click)="update()">Update</button>
-          <button class="btn mx-1 btn-danger">Delete</button>
-        </div>
-      </div>
-
-    </fieldset>
-  </div>
-</div> -->
 <div class="container" *ngIf="buku">
   <h2 style="text-align: center;">Form Edit Buku</h2>
   <fieldset>

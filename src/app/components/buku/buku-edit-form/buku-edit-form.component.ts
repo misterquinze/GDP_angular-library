@@ -24,6 +24,8 @@ export class BukuEditFormComponent implements OnInit {
   update(): void {
     if (this.buku) {
       this.bukuService.updateBuku(this.buku).subscribe();
+      this.msgSvc.add("Buku berhasil di Update");
+
     }
   }
 

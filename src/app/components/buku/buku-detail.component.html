@@ -1,4 +1,4 @@
-<div class="card border-primary mb-3" *ngIf="buku;else bukuKosong" style="width: 500px; height: 300px;" >
+<div class="card border-primary mb-3" *ngIf="buku" style="width: 500px; height: 300px;" >
 
   <div class="card-body">
     <h4 class="card-title">{{buku.judul | uppercase}} Details</h4>
@@ -12,16 +12,15 @@
         <span><button class="btn btn-secondary fw-bold" (click)="goBack()">&lt;</button></span>
         <div>
           <a class="btn mx-1 btn-success" [routerLink]="['/buku-edit-form', buku.id]">Edit Data</a>
-          <button class="btn mx-1 btn-danger">Delete Data</button>
+          <button class="btn mx-1 btn-danger" (click)="delete(buku.id)">Delete Data</button>
         </div>
       </div>
     </fieldset>
-
   </div>
 </div>
-<ng-template #bukuKosong>
+<!-- <ng-template #bukuKosong>
   <p>Data Buku tidak ada!</p>
-  </ng-template>
+</ng-template> -->
 <!-- <h2>Buku Details Works</h2> -->
 <!-- <div class="card border-primary mb-3" *ngIf="buku" style="width: 500px; height: 350px;">
   <div class="card-body">
