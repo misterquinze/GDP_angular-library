@@ -20,6 +20,7 @@ import { MessagesComponent } from './components/messages/messages.component';
 import { PelangganNewFormComponent } from './components/pelanggan/pelanggan-new-form/pelanggan-new-form.component';
 import { SewaNewFormComponent } from './components/sewa/sewa-new-form/sewa-new-form.component';
 import { BukuEditFormComponent } from './components/buku/buku-edit-form/buku-edit-form.component';
+import { PelangganEditFormComponent } from './components/pelanggan/pelanggan-edit-form/pelanggan-edit-form.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { BukuEditFormComponent } from './components/buku/buku-edit-form/buku-edi
     MessagesComponent,
     PelangganNewFormComponent,
     SewaNewFormComponent,
-    BukuEditFormComponent
+    BukuEditFormComponent,
+    PelangganEditFormComponent
   ],
   imports: [
     BrowserModule,

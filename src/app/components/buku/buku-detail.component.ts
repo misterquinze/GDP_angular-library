@@ -21,6 +21,7 @@ export class BukuDetailComponent implements OnInit {
   update(): void {
     if (this.buku) {
       this.bukuService.updateBuku(this.buku).subscribe();
+
     }
   }
 }

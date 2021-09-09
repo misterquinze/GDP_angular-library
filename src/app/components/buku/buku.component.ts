@@ -16,19 +16,16 @@ export class BukuComponent implements OnInit {
   constructor(private bukuService: BukuService, private msgSvc: MessageService) { }
 
   ngOnInit(): void {
-    // alert(this.bukuService.test());
 
-    // this.buku = this.bukuService.testDataBuku();
     // this.jmlBuku = this.buku.length;
-
+    //
     // this.getAllBuku();
 
-    // this.bukuService.getAllBuku();
   }
   getAllBuku() {
     this.bukuService.getAllBuku().subscribe(result => {
-      this.buku = result
-      console.log("buku", this.buku);
+      this.buku = result;
+      console.log("buku", this.jmlBuku);
     });
   }
 
