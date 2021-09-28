@@ -14,9 +14,10 @@
 <ng-template #pelangganKosong>
   <p>Data Pelanggan tidak ada!</p>
 </ng-template> -->
-<div class="card border-primary mb-3" *ngIf="pelanggan" style="width: 500px; height: 350px;">
+<div class="card text-white bg-dark mb-3" *ngIf="pelanggan" style="width: 500px; height: 350px;">
   <div class="card-body">
     <h4 class="card-title">{{pelanggan.nama | uppercase}} Details</h4>
+    <hr>
     <fieldset>
       <div class="form-group"><span>id: {{pelanggan.id}}</span></div>
       <div class="form-group"><span>Kode Pelanggan: {{pelanggan.kodepel}}</span></div>
