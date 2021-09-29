@@ -1,6 +1,10 @@
 <div class="container mt-3 " *ngIf="buku">
   <div class="h2 d-flex justify-content-between" style="margin-bottom: 10px;">
     Daftar Buku
+    <form class="d-flex">
+      <input class="form-control me-sm-2" type="text" placeholder="Search">
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+    </form>
     <a id="addNewBtn" class="btn btn-success" routerLink="/buku-new-form">Add New Buku</a>
   </div>
  
