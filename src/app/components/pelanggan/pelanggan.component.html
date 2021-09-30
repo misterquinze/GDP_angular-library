@@ -1,6 +1,10 @@
 <div class="container mt-3 ">
   <div class="container mb-3">
     <button class="btn btn-dark" (click)="getAllPelanggan()">Load Pelanggan</button>
+    <form class="d-flex">
+      <input class="form-control me-sm-2" type="text" placeholder="Search">
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+    </form>
     <a id="addNewBtn" class="btn btn-success" routerLink="/pelanggan-new-form">Add New Pelanggan</a>
   </div>
   <div class="d-flex justify-content-between">
